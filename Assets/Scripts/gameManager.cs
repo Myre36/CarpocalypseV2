@@ -9,9 +9,11 @@ public class gameManager : MonoBehaviour
 
     //A game object for the missile prefab
     public GameObject missile;
+    //Refrence to the time script
+    public GameObject timeIncrease;
 
     //The missile's spawn period
-    public float missileSpawnPeriod = 10f;
+    public float missileSpawnPeriod;
 
     //A random time that gets added to the spawn period
     private int randomTime;
@@ -20,16 +22,25 @@ public class gameManager : MonoBehaviour
     //Starts at the begining
     void Start()
     {
+        //Assigns the timer
+        timeIncrease = GameObject.Find("TimerIncrease");
+        //Gets the speed from the time script
+        missileSpawnPeriod = timeIncrease.GetComponent<timerScript>().missileSpawnPeriodTime;
         //Starts the coroutine that spawns the missile
         StartCoroutine(SpawnMissile());
         //Help
+    }
+
+    void Update()
+    {
+        
     }
 
     //Coroutine for spawning the missile
     IEnumerator SpawnMissile()
     {
         //Picks a random time that will be added to the spawn time of the missiles
-        randomTime = Random.Range(0, 11);
+        randomTime = Random.Range(0, 6);
         //Combines the spawn time and the randomized time
         float newTime = missileSpawnPeriod + randomTime;
         //Waits for the assigned amount of time

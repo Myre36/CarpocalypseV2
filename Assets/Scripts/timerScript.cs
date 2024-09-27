@@ -27,6 +27,8 @@ public class timerScript : MonoBehaviour
 
     public float missileDecreasePerRound;
 
+    public int missileSpawnPeriodTime = 15;
+
     public float timeBetweenIncrease;
 
     //A bunch of other variables
@@ -77,6 +79,10 @@ IEnumerator IncreaseSpeed()
         materialSlideSpeed = materialSlideSpeed + materialIncreasePerTurn;
         terrainSpeed = terrainSpeed + terrainIncreasePerTurn;
         missileSpeed = missileSpeed + missileDecreasePerRound;
+        if (missileSpawnPeriodTime > 5)
+        {
+            missileSpawnPeriodTime = missileSpawnPeriodTime - 2;
+        }
         StartCoroutine(IncreaseSpeed());
     }
 }
