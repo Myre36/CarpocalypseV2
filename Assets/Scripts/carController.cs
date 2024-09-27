@@ -95,6 +95,12 @@ public class carController : MonoBehaviour
             //Loads the Game Over scene
             SceneManager.LoadScene("GameOverScene");
         }
+        //If the object is a sccrap
+        if (collision.gameObject.CompareTag("Scrap"))
+        {
+            //Destroy the scrap
+            Destroy(collision.gameObject);
+        }
     }
 
     //The update is triggered every frame
