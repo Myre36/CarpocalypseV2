@@ -22,10 +22,6 @@ public class spawnObstacles : MonoBehaviour
     private bool spawnThreeSafe;
     private bool spawnFourSafe;
 
-    //The minimum time needed for spawning the scrap
-    public int scrapTime;
-    private int randomScrapTime;
-
     void Start()
     {
         //Calls in a function to restart all the bools
@@ -196,10 +192,5 @@ public class spawnObstacles : MonoBehaviour
         RestartBools();
         //Restarts the coroutine
         StartCoroutine(SpawnRandomObstacle());
-    }
-    IEnumerator SpawnScrap()
-    {
-        
-        yield return new WaitForSeconds(0.1f);
     }
 }
