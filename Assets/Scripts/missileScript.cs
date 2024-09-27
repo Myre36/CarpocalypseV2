@@ -47,7 +47,7 @@ public class missileScript : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         //If the object is a bullet
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Bullet"))
         {
             //Destroys the missile
             Destroy(gameObject);
