@@ -16,6 +16,10 @@ public class carController : MonoBehaviour
 
     //The assigned number for the missile that you need to shoot
     public int currentMissileNumber;
+    //The number of collected scrap
+    public int collectedScrap;
+    //The number of scrap needed to fire a missile
+    public int scrapsNeeded;
 
     //Bools that check if the car has reached the right and left edges at the screen
     private bool atRightEdge;
@@ -60,6 +64,7 @@ public class carController : MonoBehaviour
         canFire = true;
         //Make it so that the gun is not jammed
         jammed = false;
+        collectedScrap = 0;
     }
 
     //When an object enters the car's trigger
@@ -100,6 +105,8 @@ public class carController : MonoBehaviour
         {
             //Destroy the scrap
             Destroy(collision.gameObject);
+            //Increase the number of scrap collected
+            collectedScrap++;
         }
     }
 
