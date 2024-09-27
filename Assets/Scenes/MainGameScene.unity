@@ -1577,6 +1577,7 @@ MonoBehaviour:
   - {fileID: 648780940}
   - {fileID: 270265409}
   missile: {fileID: 7634861409004735586, guid: eb7b24827ca3fdc4fb092d1157e94b6a, type: 3}
+  timeIncrease: {fileID: 0}
   missileSpawnPeriod: 10
 --- !u!1 &705507993
 GameObject:
@@ -2606,7 +2607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5856295807949127657, guid: 502fe5738541bdc4aa5806f4982db71e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.97
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 5856295807949127657, guid: 502fe5738541bdc4aa5806f4982db71e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2614,7 +2615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5856295807949127657, guid: 502fe5738541bdc4aa5806f4982db71e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 124.67532
+      value: 79.63
       objectReference: {fileID: 0}
     - target: {fileID: 5856295807949127657, guid: 502fe5738541bdc4aa5806f4982db71e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3235,6 +3236,7 @@ MonoBehaviour:
   terrainIncreasePerTurn: 2
   missileSpeed: 20
   missileDecreasePerRound: 1
+  missileSpawnPeriodTime: 15
   timeBetweenIncrease: 15
   startMinutes: 0
   currentTimeText: {fileID: 1137584351}
@@ -4790,6 +4792,7 @@ MonoBehaviour:
   collectedScrap: 0
   scrapsNeeded: 0
   canFire: 0
+  hasArmor: 0
   Bullet: {fileID: 1278564229732866709, guid: 911756930b20fdb48a1d933576762763, type: 3}
   barrel: {fileID: 951636146470144510}
   closestMissile: {fileID: 0}

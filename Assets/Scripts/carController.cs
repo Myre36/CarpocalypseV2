@@ -94,16 +94,23 @@ public class carController : MonoBehaviour
         //If the object is a missile
         if (collision.gameObject.CompareTag("Missile") || collision.gameObject.CompareTag("Obstacle"))
         {
-            //Loads the Game Over scene
-            SceneManager.LoadScene("GameOverScene");
+            if (hasArmor == true)
+            {
+                Destroy(collision.gameObject);
+                hasArmor = false;
+            }
+            else
+            {
+                //Loads the Game Over scene
+                SceneManager.LoadScene("GameOverScene");
+            }
         }
         //If the object is a sccrap
         if (collision.gameObject.CompareTag("Scrap"))
         {
             //Destroy the scrap
             Destroy(collision.gameObject);
-            //Increase the number of scrap collected
-            collectedScrap++;
+            hasArmor = true;
         }
     }
 
