@@ -1373,7 +1373,7 @@ GameObject:
   - component: {fileID: 580028164}
   - component: {fileID: 580028163}
   m_Layer: 5
-  m_Name: HighScore
+  m_Name: HiScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
