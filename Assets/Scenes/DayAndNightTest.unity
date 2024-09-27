@@ -1855,7 +1855,6 @@ MonoBehaviour:
   timeIncrease: {fileID: 1377913472}
   scrap: {fileID: 0}
   obstacleSpawnPeriod: 2
-  scrapTime: 0
 --- !u!1 &738130904
 GameObject:
   m_ObjectHideFlags: 0
