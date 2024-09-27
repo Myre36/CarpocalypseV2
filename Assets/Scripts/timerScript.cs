@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System;
 
@@ -53,9 +54,9 @@ public class timerScript : MonoBehaviour
         missilesDestroyedHiScore = 0;
         StartCoroutine(IncreaseSpeed());
 
-        if (PlayerPrefs.HasKey("HighScore: "))
+        if (PlayerPrefs.HasKey("HighScore"))
         {
-            missilesDestroyedHiScore = PlayerPrefs.GetInt("HighScore: ");
+            missilesDestroyedHiScore = PlayerPrefs.GetInt("HighScore");
         }
     }
 
@@ -76,7 +77,7 @@ public class timerScript : MonoBehaviour
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
         currentTimeText.text = time.ToString(@"mm\:ss\.ff");
         missilesDestroyedText.text = "Missiles destroyed: " + missilesDestroyed;
-        missilesDestroyedHiScoreText.text = "HighScore: " + missilesDestroyedHiScore;
+        missilesDestroyedHiScoreText.text = "HighScore : " + missilesDestroyedHiScore;
     }
 
     public void StartStopWatch()
