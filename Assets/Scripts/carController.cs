@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class carController : MonoBehaviour
 {
@@ -59,6 +60,11 @@ public class carController : MonoBehaviour
     //The sound effect for when the gun jamms
     public AudioSource jammingSound;
 
+    //A refrence to the black box that displays when a missile is fired
+    public GameObject blackBox;
+    //Refrence to the text that displays when a missile is fired
+    public GameObject pressText2;
+
     //Plays at the start
     void Start()
     {
@@ -98,6 +104,10 @@ public class carController : MonoBehaviour
             {
                 Destroy(collision.gameObject);
                 hasArmor = false;
+                //Disables the black box
+                blackBox.GetComponent<Image>().enabled = false;
+                //Disables the text
+                pressText2.GetComponent<TMP_Text>().enabled = false;
             }
             else
             {

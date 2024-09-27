@@ -3240,8 +3240,10 @@ MonoBehaviour:
   timeBetweenIncrease: 15
   startMinutes: 0
   currentTimeText: {fileID: 1137584351}
+  currentTimeHiScoreText: {fileID: 0}
   missilesDestroyed: 0
   missilesDestroyedText: {fileID: 346843622}
+  missilesDestroyedHiScoreText: {fileID: 0}
 --- !u!4 &1377913474
 Transform:
   m_ObjectHideFlags: 0
@@ -4809,6 +4811,8 @@ MonoBehaviour:
   pressText: {fileID: 93043974}
   gunSound: {fileID: 919132149323257582}
   jammingSound: {fileID: 919132149323257581}
+  blackBox: {fileID: 564603820}
+  pressText2: {fileID: 93043972}
 --- !u!54 &919132149323257580
 Rigidbody:
   m_ObjectHideFlags: 0
