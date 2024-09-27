@@ -34,12 +34,14 @@ public class timerScript : MonoBehaviour
     //A bunch of other variables
     bool stopWatchActive = false;
     float currentTime;
+
     public int startMinutes;
     public TMP_Text currentTimeText;
+    public TMP_Text currentTimeHiScoreText;
 
     public int missilesDestroyed;
-
     public TMP_Text missilesDestroyedText;
+    public TMP_Text missilesDestroyedHiScoreText;
 
     // Start is called before the first frame update
     void Start()

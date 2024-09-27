@@ -1373,7 +1373,7 @@ GameObject:
   - component: {fileID: 580028164}
   - component: {fileID: 580028163}
   m_Layer: 5
-  m_Name: HiScoreText
+  m_Name: currentTimeHiScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1393,9 +1393,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 881861924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: -114}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 100, y: 374}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &580028163
@@ -1418,7 +1418,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 'Hi-Score: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1845,6 +1845,7 @@ MonoBehaviour:
   - {fileID: 648780940}
   - {fileID: 270265409}
   missile: {fileID: 7634861409004735586, guid: eb7b24827ca3fdc4fb092d1157e94b6a, type: 3}
+  timeIncrease: {fileID: 0}
   missileSpawnPeriod: 10
 --- !u!1 &705507993
 GameObject:
@@ -2460,11 +2461,11 @@ RectTransform:
   m_Children:
   - {fileID: 80583}
   - {fileID: 1137584350}
+  - {fileID: 580028162}
   - {fileID: 346843621}
   - {fileID: 564603821}
   - {fileID: 836539838}
   - {fileID: 418768109}
-  - {fileID: 580028162}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3154,7 +3155,7 @@ GameObject:
   - component: {fileID: 1137584352}
   - component: {fileID: 1137584351}
   m_Layer: 5
-  m_Name: TimerText
+  m_Name: currentTimeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3505,11 +3506,14 @@ MonoBehaviour:
   terrainIncreasePerTurn: 2
   missileSpeed: 20
   missileDecreasePerRound: 1
+  missileSpawnPeriodTime: 15
   timeBetweenIncrease: 15
   startMinutes: 0
   currentTimeText: {fileID: 1137584351}
+  currentTimeHiScoreText: {fileID: 0}
   missilesDestroyed: 0
   missilesDestroyedText: {fileID: 346843622}
+  missilesDestroyedHiScoreText: {fileID: 0}
 --- !u!4 &1377913474
 Transform:
   m_ObjectHideFlags: 0
@@ -5060,6 +5064,7 @@ MonoBehaviour:
   collectedScrap: 0
   scrapsNeeded: 0
   canFire: 0
+  hasArmor: 0
   Bullet: {fileID: 1278564229732866709, guid: 911756930b20fdb48a1d933576762763, type: 3}
   barrel: {fileID: 951636146470144510}
   closestMissile: {fileID: 0}

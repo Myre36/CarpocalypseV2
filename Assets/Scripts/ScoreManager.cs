@@ -6,8 +6,15 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public TMP_Text scoreText;
-    public TMP_Text hiScoreText;
+    public TMP_Text currentTimeText;
+    public TMP_Text currentTimeHiScoreText;
+    public int startMinutes;
+    
+
+
+    public TMP_Text missilesDestroyedText;
+    public TMP_Text missilesDestroyedHiScoreText;
+    
     public static int scoreCount;
     public static int hiScoreCount;
 
@@ -29,7 +36,7 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", hiScoreCount);
         }
 
-        scoreText.text = "Score: " + scoreCount;
-        hiScoreText.text = "Hi-Score: " + hiScoreCount;
+        currentTimeText.text = "Score: " + scoreCount;
+        currentTimeHiScoreText.text = "Hi-Score: " + hiScoreCount;
     }
 }
