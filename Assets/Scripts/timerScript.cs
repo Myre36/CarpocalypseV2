@@ -79,7 +79,7 @@ IEnumerator IncreaseSpeed()
         materialSlideSpeed = materialSlideSpeed + materialIncreasePerTurn;
         terrainSpeed = terrainSpeed + terrainIncreasePerTurn;
         missileSpeed = missileSpeed + missileDecreasePerRound;
-        if (missileSpawnPeriodTime > 5)
+        if (missileSpawnPeriodTime > 3)
         {
             missileSpawnPeriodTime = missileSpawnPeriodTime - 2;
         }

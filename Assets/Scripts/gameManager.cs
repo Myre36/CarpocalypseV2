@@ -24,8 +24,6 @@ public class gameManager : MonoBehaviour
     {
         //Assigns the timer
         timeIncrease = GameObject.Find("TimerIncrease");
-        //Gets the speed from the time script
-        missileSpawnPeriod = timeIncrease.GetComponent<timerScript>().missileSpawnPeriodTime;
         //Starts the coroutine that spawns the missile
         StartCoroutine(SpawnMissile());
         //Help
@@ -33,7 +31,8 @@ public class gameManager : MonoBehaviour
 
     void Update()
     {
-        
+        //Gets the speed from the time script
+        missileSpawnPeriod = timeIncrease.GetComponent<timerScript>().missileSpawnPeriodTime;
     }
 
     //Coroutine for spawning the missile

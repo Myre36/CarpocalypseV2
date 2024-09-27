@@ -28,6 +28,8 @@ public class carController : MonoBehaviour
     public bool canFire;
     //A bool to check if the gun is jammed
     private bool jammed;
+    //Bool for if the car is armored
+    public bool hasArmor;
 
     //A gameobject for the bullet prefab
     public GameObject Bullet;
@@ -65,6 +67,7 @@ public class carController : MonoBehaviour
         //Make it so that the gun is not jammed
         jammed = false;
         collectedScrap = 0;
+        hasArmor = false;
     }
 
     //When an object enters the car's trigger
@@ -89,13 +92,7 @@ public class carController : MonoBehaviour
             carBody.transform.rotation = Quaternion.Euler(-90f, 0f, 0f);
         }
         //If the object is a missile
-        if (collision.gameObject.CompareTag("Missile"))
-        {
-            //Loads the Game Over scene
-            SceneManager.LoadScene("GameOverScene");
-        }
-        //If the object is an obstacle
-        if (collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Missile") || collision.gameObject.CompareTag("Obstacle"))
         {
             //Loads the Game Over scene
             SceneManager.LoadScene("GameOverScene");
