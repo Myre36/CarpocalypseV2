@@ -12,6 +12,7 @@ TagManager:
   - ObstacleEndpoint
   - LeftWall
   - Car
+  - Scrap
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - Walls
   - Terrain
   - Bullet
-  - 
+  - Scrap
   - 
   - 
   - 
