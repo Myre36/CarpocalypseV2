@@ -39,7 +39,8 @@ public class timerScript : MonoBehaviour
     public TMP_Text currentTimeText;
     public TMP_Text currentTimeHiScoreText;
 
-    public int missilesDestroyed;
+    public  int missilesDestroyed;
+    public  int missilesDestroyedHiScore;
     public TMP_Text missilesDestroyedText;
     public TMP_Text missilesDestroyedHiScoreText;
 
@@ -49,18 +50,33 @@ public class timerScript : MonoBehaviour
         currentTime = startMinutes = 0;
         stopWatchActive = true;
         missilesDestroyed = 0;
+        missilesDestroyedHiScore = 0;
         StartCoroutine(IncreaseSpeed());
+
+        if (PlayerPrefs.HasKey("HighScore: "))
+        {
+            missilesDestroyedHiScore = PlayerPrefs.GetInt("HighScore: ");
+        }
     }
 
     void Update()
     {
         if (stopWatchActive == true)
         { 
-            currentTime = currentTime + Time.deltaTime; 
+            currentTime = currentTime + Time.deltaTime;
+            
         }
+
+        if (missilesDestroyed > missilesDestroyedHiScore)
+        {
+            missilesDestroyedHiScore = missilesDestroyed;
+            PlayerPrefs.SetInt("HighScore", missilesDestroyedHiScore);
+        }
+
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
         currentTimeText.text = time.ToString(@"mm\:ss\.ff");
         missilesDestroyedText.text = "Missiles destroyed: " + missilesDestroyed;
+        missilesDestroyedHiScoreText.text = "HighScore: " + missilesDestroyedHiScore;
     }
 
     public void StartStopWatch()
