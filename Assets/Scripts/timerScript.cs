@@ -36,7 +36,8 @@ public class timerScript : MonoBehaviour
     bool stopWatchActive = false;
     float currentTime;
 
-    public int startMinutes;
+    public int counter;
+    public int currentTimeHiScore;
     public TMP_Text currentTimeText;
     public TMP_Text currentTimeHiScoreText;
 
@@ -48,7 +49,8 @@ public class timerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentTime = startMinutes = 0;
+        counter = 0;
+        currentTimeHiScore = 0;
         stopWatchActive = true;
         missilesDestroyed = 0;
         missilesDestroyedHiScore = 0;
@@ -57,6 +59,11 @@ public class timerScript : MonoBehaviour
         if (PlayerPrefs.HasKey("HighScore"))
         {
             missilesDestroyedHiScore = PlayerPrefs.GetInt("HighScore");
+        }
+
+        if (PlayerPrefs.HasKey("TimeHighScore"))
+        {
+            currentTimeHiScore = PlayerPrefs.GetInt("TimeHighScore");
         }
     }
 
@@ -74,8 +81,15 @@ public class timerScript : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", missilesDestroyedHiScore);
         }
 
+        if (counter > currentTimeHiScore)
+        {
+            currentTimeHiScore = counter;
+            PlayerPrefs.SetInt("TimeHighScore", currentTimeHiScore);
+        }
+
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
         currentTimeText.text = time.ToString(@"mm\:ss\.ff");
+        currentTimeHiScoreText.text = @"mm\:ss\.ff" + currentTimeHiScore;
         missilesDestroyedText.text = "Missiles destroyed: " + missilesDestroyed;
         missilesDestroyedHiScoreText.text = "HighScore : " + missilesDestroyedHiScore;
     }
