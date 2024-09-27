@@ -11,6 +11,7 @@ public class spawnObstacles : MonoBehaviour
     public GameObject[] obstacles;
     //Refrence to the timer 
     public GameObject timeIncrease;
+    public GameObject scrap;
 
     //The spawn period of the obstacles
     public float obstacleSpawnPeriod = 1.0f;
