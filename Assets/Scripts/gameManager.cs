@@ -22,6 +22,7 @@ public class gameManager : MonoBehaviour
     {
         //Starts the coroutine that spawns the missile
         StartCoroutine(SpawnMissile());
+        //Help
     }
 
     //Coroutine for spawning the missile
