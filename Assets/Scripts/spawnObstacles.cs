@@ -22,12 +22,15 @@ public class spawnObstacles : MonoBehaviour
     private bool spawnThreeSafe;
     private bool spawnFourSafe;
 
+    public int shieldSpawnTime = 20;
+
     void Start()
     {
         //Calls in a function to restart all the bools
         RestartBools();
         //Starts the coroutine that spawns in the obstacles
         StartCoroutine(SpawnRandomObstacle());
+        StartCoroutine(SpawnShield());
     }
 
     void Update()
@@ -192,5 +195,14 @@ public class spawnObstacles : MonoBehaviour
         RestartBools();
         //Restarts the coroutine
         StartCoroutine(SpawnRandomObstacle());
+    }
+
+    IEnumerator SpawnShield()
+    {
+        int randomTime = Random.Range(0, 11);
+        yield return new WaitForSeconds(shieldSpawnTime + randomTime);
+        Vector3 randomSpawnPosition = new Vector3(Random.Range(-9.5f, 9.5f), 1f, 195);
+        Instantiate(scrap, randomSpawnPosition, Quaternion.identity);
+        StartCoroutine(SpawnShield());
     }
 }
