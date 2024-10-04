@@ -45,9 +45,13 @@ public class carController : MonoBehaviour
     public GameObject[] allTargetsWithTag;
     //A list for all the wheels
     public GameObject[] wheels;
+    //Refrence to the rocket
+    public GameObject rocket;
 
     //A transform for the place where the bullet is supposed to spawn
-    public Transform bulletSpawn;
+    public Transform bulletSpawn1;
+    public Transform bulletSpawn2;
+    public Transform bulletSpawn3;
     //A transform for the object the turret is supposed to follow
     public Transform objectToShoot;
 
@@ -73,6 +77,8 @@ public class carController : MonoBehaviour
     public bool isNormalGun;
     public bool isMiniGun;
     public bool isRocketGun;
+
+    public Animator animator;
 
     //Plays at the start
     void Start()
@@ -262,7 +268,46 @@ public class carController : MonoBehaviour
         }
         if(isRocketGun == true)
         {
-
+            //This is basically code that lets makes you shoot the missile if you press the right button, and miss if you don't
+            if (Input.GetKeyDown(KeyCode.Alpha1) && currentMissileNumber == 1 && canFire == true)
+            {
+                //Starts the coroutine that shoots
+                StartCoroutine(ShootRocket());
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha1) && currentMissileNumber != 1 && canFire == true)
+            {
+                StartCoroutine(Jammed());
+            }
+            //If the player presses the left mouse button
+            if (Input.GetKeyDown(KeyCode.Alpha2) && currentMissileNumber == 2 && canFire == true)
+            {
+                //Starts the coroutine that shoots
+                StartCoroutine(ShootRocket());
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2) && currentMissileNumber != 2 && canFire == true)
+            {
+                StartCoroutine(Jammed());
+            }
+            //If the player presses the left mouse button
+            if (Input.GetKeyDown(KeyCode.Alpha3) && currentMissileNumber == 3 && canFire == true)
+            {
+                //Starts the coroutine that shoots
+                StartCoroutine(ShootRocket());
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3) && currentMissileNumber != 3 && canFire == true)
+            {
+                StartCoroutine(Jammed());
+            }
+            //If the player presses the left mouse button
+            if (Input.GetKeyDown(KeyCode.Alpha4) && currentMissileNumber == 4 && canFire == true)
+            {
+                //Starts the coroutine that shoots
+                StartCoroutine(ShootRocket());
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4) && currentMissileNumber != 4 && canFire == true)
+            {
+                StartCoroutine(Jammed());
+            }
         }
 
         
@@ -326,7 +371,7 @@ public class carController : MonoBehaviour
         canFire = false;
 
         //Spawns in a bullet at the bulletSpawn location
-        GameObject ball = Instantiate(Bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
+        GameObject ball = Instantiate(Bullet, bulletSpawn1.transform.position, bulletSpawn1.transform.rotation);
 
         //Plays shoot sound
         gunSound.Play(0);
@@ -366,7 +411,20 @@ public class carController : MonoBehaviour
         //Makes it so that the player can't fire
         canFire = false;
 
+        //Spawns in the rocket
+        GameObject fireTube = Instantiate(rocket, bulletSpawn2.transform.position, bulletSpawn2.transform.rotation);
+
+        //Plays shoot sound
+        gunSound.Play(0);
+
+        fireTube.GetComponent<RocketScript>().objectToFollow = objectToShoot;
+
+        animator.Play("CarRocketFire");
+
         yield return new WaitForSeconds(turretCooldown);
+
+        //Makes it so that the player can fire
+        canFire = true;
     }
 
 }
