@@ -14,14 +14,11 @@ public class ScoreManager : MonoBehaviour
     public void Start()
     {
         GetComponent<timerScript>();
-        if (missilesDestroyed > PlayerPrefs.GetInt("Score"))
-            {
-            PlayerPrefs.SetInt("Score", missilesDestroyed);
-        }// insert default value)
+            
 {
             
 }
-        missilesDestroyedText.text = "Missiles destroyed: " + missilesDestroyed;
+        missilesDestroyedText.text = "Missiles destroyed: " + PlayerPrefs.GetInt("Score");
 
         missilesDestroyedHiScore = PlayerPrefs.GetInt("HighScore");
         missilesDestroyedHiScoreText.text = "High Score: " + missilesDestroyedHiScore + " missiles destroyed!";
