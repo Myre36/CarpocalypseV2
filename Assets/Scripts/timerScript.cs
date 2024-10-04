@@ -63,7 +63,7 @@ public class timerScript : MonoBehaviour
 
         if (PlayerPrefs.HasKey("TimeHighScore"))
         {
-            currentTimeHiScoreText.text = PlayerPrefs.GetInt("TimeHighScore").ToString(@"mm\:ss\.ff");
+            currentTimeHiScoreText.text = PlayerPrefs.GetString("TimeHighScore").ToString();
         }
 
     }
@@ -85,7 +85,7 @@ public class timerScript : MonoBehaviour
         if (counter > currentTimeHiScore)
         {
             currentTimeHiScore = counter;
-            PlayerPrefs.SetInt("TimeHighScore", currentTimeHiScore);
+            PlayerPrefs.SetString("TimeHighScore", currentTimeHiScore.ToString(@"mm\:ss\.ff"));
         }
 
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
