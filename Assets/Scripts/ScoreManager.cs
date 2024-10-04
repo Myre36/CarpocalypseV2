@@ -13,6 +13,7 @@ public class ScoreManager : MonoBehaviour
     {
         GetComponent<timerScript>();
         missilesDestroyedHiScore = PlayerPrefs.GetInt("HighScore");
+        missilesDestroyedHiScoreText.text = "High Score: " + missilesDestroyedHiScore + " missiles destroyed!";
     }
  
 }
