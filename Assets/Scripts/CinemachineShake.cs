@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using System;
 
 public class CinemachineShake : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class CinemachineShake : MonoBehaviour
             cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
-        shakeTimer -= time;
+        shakeTimer = time;
     }
 
     private void Update()
