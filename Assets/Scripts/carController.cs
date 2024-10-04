@@ -78,7 +78,8 @@ public class carController : MonoBehaviour
     public bool isMiniGun;
     public bool isRocketGun;
 
-    public Animator animator;
+    public Animator rocketAnimator;
+    public Animator miniAnimator;
 
     //Plays at the start
     void Start()
@@ -310,6 +311,49 @@ public class carController : MonoBehaviour
                 StartCoroutine(Jammed());
             }
         }
+        if(isMiniGun == true)
+        {
+            //This is basically code that lets makes you shoot the missile if you press the right button, and miss if you don't
+            if (Input.GetKeyDown(KeyCode.Alpha1) && currentMissileNumber == 1 && canFire == true)
+            {
+                //Starts the coroutine that shoots
+                StartCoroutine(ShootMiniGun());
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha1) && currentMissileNumber != 1 && canFire == true)
+            {
+                StartCoroutine(Jammed());
+            }
+            //If the player presses the left mouse button
+            if (Input.GetKeyDown(KeyCode.Alpha2) && currentMissileNumber == 2 && canFire == true)
+            {
+                //Starts the coroutine that shoots
+                StartCoroutine(ShootMiniGun());
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2) && currentMissileNumber != 2 && canFire == true)
+            {
+                StartCoroutine(Jammed());
+            }
+            //If the player presses the left mouse button
+            if (Input.GetKeyDown(KeyCode.Alpha3) && currentMissileNumber == 3 && canFire == true)
+            {
+                //Starts the coroutine that shoots
+                StartCoroutine(ShootMiniGun());
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3) && currentMissileNumber != 3 && canFire == true)
+            {
+                StartCoroutine(Jammed());
+            }
+            //If the player presses the left mouse button
+            if (Input.GetKeyDown(KeyCode.Alpha4) && currentMissileNumber == 4 && canFire == true)
+            {
+                //Starts the coroutine that shoots
+                StartCoroutine(ShootMiniGun());
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4) && currentMissileNumber != 4 && canFire == true)
+            {
+                StartCoroutine(Jammed());
+            }
+        }
 
         
         //End of gun code
@@ -386,6 +430,13 @@ public class carController : MonoBehaviour
         canFire = true;
     }
 
+    private void SpawnPellate()
+    {
+        GameObject ball = Instantiate(Bullet, bulletSpawn3.transform.position, bulletSpawn3.transform.rotation);
+
+        ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, 0, launchVelocity));
+    }
+
     IEnumerator Jammed()
     {
         //Makes it impossible to fire
@@ -419,12 +470,49 @@ public class carController : MonoBehaviour
 
         fireTube.GetComponent<RocketScript>().objectToFollow = objectToShoot;
 
-        animator.Play("CarRocketFire");
+        rocketAnimator.Play("CarRocketFire");
 
         yield return new WaitForSeconds(turretCooldown);
 
         //Makes it so that the player can fire
         canFire = true;
     }
+    IEnumerator ShootMiniGun()
+    {
+        //Makes it so that the player can't fire
+        canFire = false;
 
+        //Plays shoot sound
+        gunSound.Play(0);
+
+        GameObject miniPelletta = Instantiate(Bullet, bulletSpawn3.transform.position, bulletSpawn3.transform.rotation);
+
+        miniPelletta.GetComponent<RocketScript>().objectToFollow = objectToShoot;
+
+        miniAnimator.Play("MachineGunSpin");
+
+        yield return new WaitForSeconds(0.1f);
+        SpawnPellate();
+        yield return new WaitForSeconds(0.1f);
+        SpawnPellate();
+        yield return new WaitForSeconds(0.1f);
+        SpawnPellate();
+        yield return new WaitForSeconds(0.1f);
+        SpawnPellate();
+        yield return new WaitForSeconds(0.1f);
+        SpawnPellate();
+        yield return new WaitForSeconds(0.1f);
+        SpawnPellate();
+        yield return new WaitForSeconds(0.1f);
+        SpawnPellate();
+        yield return new WaitForSeconds(0.1f);
+        SpawnPellate();
+        yield return new WaitForSeconds(0.1f);
+        SpawnPellate();
+
+        yield return new WaitForSeconds(turretCooldown -1);
+
+        //Makes it so that the player can fire
+        canFire = true;
+    }
 }

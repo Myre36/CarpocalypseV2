@@ -2136,7 +2136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &732188105
 Transform:
   m_ObjectHideFlags: 0
@@ -6132,7 +6132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5265847944320247261
 Transform:
   m_ObjectHideFlags: 0
@@ -7301,10 +7301,11 @@ MonoBehaviour:
   armor1: {fileID: 7909015154448035861}
   armor2: {fileID: 8056045808696032089}
   armor3: {fileID: 6875547040724175169}
-  isNormalGun: 1
-  isMiniGun: 0
+  isNormalGun: 0
+  isMiniGun: 1
   isRocketGun: 0
-  animator: {fileID: 9005819988307989334}
+  rocketAnimator: {fileID: 9005819988307989334}
+  miniAnimator: {fileID: 9153456127928366609}
 --- !u!54 &8660426066575743817
 Rigidbody:
   m_ObjectHideFlags: 0
