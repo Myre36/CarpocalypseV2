@@ -3,37 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class ScoreManager : MonoBehaviour
 {
-    public int startMinutes;
-    public int highScoreMinutes;
-    public TMP_Text currentTimeText;
-    public TMP_Text currentTimeHiScoreText;
-    
-    
-
-
-    public TMP_Text missilesDestroyedText;
+    public int missilesDestroyedHiScore;
     public TMP_Text missilesDestroyedHiScoreText;
-    
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        PlayerPrefs.GetInt("HighScore");
+        GetComponent<timerScript>();
+        missilesDestroyedHiScore = PlayerPrefs.GetInt("HighScore");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (startMinutes > highScoreMinutes)
-        {
-            highScoreMinutes = startMinutes;
-            PlayerPrefs.SetInt("HighScore", highScoreMinutes);
-        }
-
-        currentTimeText.text = "Score: " + startMinutes;
-        currentTimeHiScoreText.text = "Hi-Score: " + highScoreMinutes;
-    }
+ 
 }
