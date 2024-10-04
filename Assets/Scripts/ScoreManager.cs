@@ -21,10 +21,7 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.HasKey("HighScore"))
-        {
-            highScoreMinutes = PlayerPrefs.GetInt("HighScore: ");
-        }
+        PlayerPrefs.GetInt("HighScore");
     }
 
     // Update is called once per frame

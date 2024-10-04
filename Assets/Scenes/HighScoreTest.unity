@@ -914,7 +914,7 @@ GameObject:
   - component: {fileID: 418768111}
   - component: {fileID: 418768110}
   m_Layer: 5
-  m_Name: Score
+  m_Name: TimeHigscore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -936,7 +936,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: 0}
+  m_AnchoredPosition: {x: -1797, y: 404}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &418768110
@@ -959,7 +959,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 0:00.00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1418,7 +1418,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'HighScore: 0'
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2124,6 +2124,7 @@ MonoBehaviour:
   timeIncrease: {fileID: 1377913472}
   scrap: {fileID: 0}
   obstacleSpawnPeriod: 2
+  shieldSpawnTime: 20
 --- !u!1 &738130904
 GameObject:
   m_ObjectHideFlags: 0
@@ -2461,11 +2462,11 @@ RectTransform:
   m_Children:
   - {fileID: 80583}
   - {fileID: 1137584350}
+  - {fileID: 418768109}
   - {fileID: 346843621}
   - {fileID: 580028162}
   - {fileID: 564603821}
   - {fileID: 836539838}
-  - {fileID: 418768109}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3508,9 +3509,10 @@ MonoBehaviour:
   missileDecreasePerRound: 1
   missileSpawnPeriodTime: 15
   timeBetweenIncrease: 15
-  startMinutes: 0
+  counter: 0
+  currentTimeHiScore: 0
   currentTimeText: {fileID: 1137584351}
-  currentTimeHiScoreText: {fileID: 0}
+  currentTimeHiScoreText: {fileID: 418768110}
   missilesDestroyed: 0
   missilesDestroyedHiScore: 0
   missilesDestroyedText: {fileID: 346843622}
@@ -5082,6 +5084,8 @@ MonoBehaviour:
   pressText: {fileID: 93043974}
   gunSound: {fileID: 919132149323257582}
   jammingSound: {fileID: 919132149323257581}
+  blackBox: {fileID: 0}
+  pressText2: {fileID: 0}
 --- !u!54 &919132149323257580
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -47,7 +47,7 @@ public class timerScript : MonoBehaviour
     public TMP_Text missilesDestroyedHiScoreText;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         counter = 0;
         currentTimeHiScore = 0;
@@ -63,11 +63,12 @@ public class timerScript : MonoBehaviour
 
         if (PlayerPrefs.HasKey("TimeHighScore"))
         {
-            currentTimeHiScore = PlayerPrefs.GetInt("TimeHighScore");
+            currentTimeHiScoreText.text = PlayerPrefs.GetInt("TimeHighScore").ToString();
         }
+
     }
 
-    void Update()
+    public void Update()
     {
         if (stopWatchActive == true)
         { 
@@ -81,17 +82,17 @@ public class timerScript : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", missilesDestroyedHiScore);
         }
 
-        if (counter > currentTimeHiScore)
+        if (currentTime > currentTimeHiScore)
         {
             currentTimeHiScore = counter;
             PlayerPrefs.SetInt("TimeHighScore", currentTimeHiScore);
         }
 
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
-        currentTimeText.text = time.ToString(@"mm\:ss\.ff");
-        currentTimeHiScoreText.text = @"mm\:ss\.ff" + currentTimeHiScore;
+        currentTimeText.text = "Survived: " + time.ToString(@"mm\:ss\.ff");
+        currentTimeHiScoreText.text = "High Score: " + currentTimeHiScore;
         missilesDestroyedText.text = "Missiles destroyed: " + missilesDestroyed;
-        missilesDestroyedHiScoreText.text = "HighScore : " + missilesDestroyedHiScore;
+        // missilesDestroyedHiScoreText.text = "High Score: " + missilesDestroyedHiScore(@"mm\:ss\.ff");
     }
 
     public void StartStopWatch()
