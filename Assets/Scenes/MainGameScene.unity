@@ -933,6 +933,90 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346843620}
   m_CullTransparentMesh: 1
+--- !u!1 &453774808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 453774809}
+  - component: {fileID: 453774811}
+  - component: {fileID: 453774810}
+  m_Layer: 0
+  m_Name: Rocket Fired
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &453774809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453774808}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.7321388, w: 0.68115544}
+  m_LocalPosition: {x: 0.028848, y: -0.0018864, z: -0.00050986}
+  m_LocalScale: {x: 0.40882498, y: 0.40882498, z: 0.7068391}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7308173220400539423}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -94.132}
+--- !u!23 &453774810
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453774808}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 293914787354285987, guid: fbd018bc870608f409a06ccd737bd150, type: 3}
+  - {fileID: -3649054997551663926, guid: fbd018bc870608f409a06ccd737bd150, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &453774811
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453774808}
+  m_Mesh: {fileID: 1988216149656743765, guid: fbd018bc870608f409a06ccd737bd150, type: 3}
 --- !u!1 &481139008
 GameObject:
   m_ObjectHideFlags: 0
@@ -5975,6 +6059,7 @@ Transform:
   m_Children:
   - {fileID: 8240210639876730475}
   - {fileID: 350014691098455865}
+  - {fileID: 453774809}
   m_Father: {fileID: 8321476956779938302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &7580019199384102929
@@ -6293,7 +6378,7 @@ Transform:
   m_GameObject: {fileID: 4497020380512939772}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.021992235, y: -0.0068914494, z: 0.0049837595}
+  m_LocalPosition: {x: 0.021992235, y: -0.006891449, z: 0.004983759}
   m_LocalScale: {x: 0.11168123, y: 0.010636041, z: 0.9875011}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6711,6 +6796,7 @@ GameObject:
   - component: {fileID: 7308173220400539423}
   - component: {fileID: 4688162151432305392}
   - component: {fileID: 4478117973292632692}
+  - component: {fileID: 9005819988307989334}
   m_Layer: 0
   m_Name: Rocket_L
   m_TagString: Untagged
@@ -6718,6 +6804,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &9005819988307989334
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9005819988307989333}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ca737e303515c24fb4170798d5627fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &9024781738400914155
 Transform:
   m_ObjectHideFlags: 0
