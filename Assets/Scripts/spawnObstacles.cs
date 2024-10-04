@@ -201,7 +201,7 @@ public class spawnObstacles : MonoBehaviour
     {
         int randomTime = Random.Range(0, 11);
         yield return new WaitForSeconds(shieldSpawnTime + randomTime);
-        Vector3 randomSpawnPosition = new Vector3(Random.Range(-9.5f, 9.5f), 1f, 195);
+        Vector3 randomSpawnPosition = new Vector3(Random.Range(-9.5f, 9.5f), 1.316f, 195);
         Instantiate(scrap, randomSpawnPosition, Quaternion.identity);
         StartCoroutine(SpawnShield());
     }
