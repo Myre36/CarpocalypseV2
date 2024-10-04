@@ -51,7 +51,7 @@ public class missileScript : MonoBehaviour
         {
             //Destroys the missile
             Destroy(gameObject);
-            CinemachineShake.Instance.ShakeCamera(5f, .1f);
+            //CinemachineShake.Instance.ShakeCamera(5f, .1f);
             //Disables the black box
             blackBox.GetComponent<Image>().enabled = false;
             //Disables the text
