@@ -1256,7 +1256,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1083964844}
-  - component: {fileID: 1083964843}
   - component: {fileID: 1083964845}
   m_Layer: 0
   m_Name: TimeManager
@@ -1265,38 +1264,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1083964843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1083964842}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ed901e33207ea64cbd37d9ded88c15a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstacleSpeed: 25
-  obstacleDecreasePerRound: 0
-  obstacleSpawnPeriod: 2
-  obstacleSpawnIncrease: 0
-  materialSlideSpeed: 1.25
-  materialIncreasePerTurn: 0
-  terrainSpeed: 25.5
-  terrainIncreasePerTurn: 0
-  missileSpeed: 20
-  missileDecreasePerRound: 0
-  missileSpawnPeriodTime: 15
-  timeBetweenIncrease: 0
-  counter: 0
-  currentTimeHiScore: 0
-  currentTimeText: {fileID: 0}
-  currentTimeHiScoreText: {fileID: 0}
-  missilesDestroyed: 0
-  missilesDestroyedHiScore: 0
-  missilesDestroyedText: {fileID: 0}
-  missilesDestroyedHiScoreText: {fileID: 2003812588}
 --- !u!4 &1083964844
 Transform:
   m_ObjectHideFlags: 0
@@ -1326,7 +1293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missilesDestroyed: 0
   missilesDestroyedText: {fileID: 2003812588}
-  missilesDestroyedHiScore: 6
+  missilesDestroyedHiScore: 0
   missilesDestroyedHiScoreText: {fileID: 650196577}
 --- !u!1 &1320943717
 GameObject:

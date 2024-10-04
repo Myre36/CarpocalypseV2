@@ -11,9 +11,10 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text missilesDestroyedText;
     public int missilesDestroyedHiScore;
     public TMP_Text missilesDestroyedHiScoreText;
-    private void Start()
+    public void Start()
     {
         GetComponent<timerScript>();
+        missilesDestroyed = missilesDestroyed++;
         missilesDestroyedText.text = "Missiles destroyed: " + missilesDestroyed;
 
         missilesDestroyedHiScore = PlayerPrefs.GetInt("HighScore");

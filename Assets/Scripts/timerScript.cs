@@ -66,6 +66,8 @@ public class timerScript : MonoBehaviour
             currentTimeHiScoreText.text = PlayerPrefs.GetString("TimeHighScore").ToString();
         }
 
+        
+
     }
 
     public void Update()
