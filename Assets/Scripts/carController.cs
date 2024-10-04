@@ -64,6 +64,8 @@ public class carController : MonoBehaviour
     public AudioSource gunSound;
     //The sound effect for when the gun jamms
     public AudioSource jammingSound;
+    public AudioSource miniGunSound;
+    public AudioSource rocketSound;
 
     //A refrence to the black box that displays when a missile is fired
     public GameObject blackBox;
@@ -466,7 +468,7 @@ public class carController : MonoBehaviour
         GameObject fireTube = Instantiate(rocket, bulletSpawn2.transform.position, bulletSpawn2.transform.rotation);
 
         //Plays shoot sound
-        gunSound.Play(0);
+        rocketSound.Play(0);
 
         fireTube.GetComponent<RocketScript>().objectToFollow = objectToShoot;
 
@@ -483,7 +485,7 @@ public class carController : MonoBehaviour
         canFire = false;
 
         //Plays shoot sound
-        gunSound.Play(0);
+        miniGunSound.Play(0);
 
         GameObject miniPelletta = Instantiate(Bullet, bulletSpawn3.transform.position, bulletSpawn3.transform.rotation);
 
