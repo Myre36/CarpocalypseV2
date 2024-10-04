@@ -70,6 +70,10 @@ public class carController : MonoBehaviour
     public GameObject armor2;
     public GameObject armor3;
 
+    public bool isNormalGun;
+    public bool isMiniGun;
+    public bool isRocketGun;
+
     //Plays at the start
     void Start()
     {
@@ -212,46 +216,56 @@ public class carController : MonoBehaviour
         barrel.transform.LookAt(objectToShoot);
 
         //Hello TO, welcome to my beutiful and very efficient code :)
-        //This is basically code that lets makes you shoot the missile if you press the right button, and miss if you don't
-        if (Input.GetKeyDown(KeyCode.Alpha1) && currentMissileNumber == 1 && canFire == true)
+
+        if(isNormalGun == true)
         {
-            //Starts the coroutine that shoots
-            StartCoroutine(ShootTurret());
+            //This is basically code that lets makes you shoot the missile if you press the right button, and miss if you don't
+            if (Input.GetKeyDown(KeyCode.Alpha1) && currentMissileNumber == 1 && canFire == true)
+            {
+                //Starts the coroutine that shoots
+                StartCoroutine(ShootTurret());
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha1) && currentMissileNumber != 1 && canFire == true)
+            {
+                StartCoroutine(Jammed());
+            }
+            //If the player presses the left mouse button
+            if (Input.GetKeyDown(KeyCode.Alpha2) && currentMissileNumber == 2 && canFire == true)
+            {
+                //Starts the coroutine that shoots
+                StartCoroutine(ShootTurret());
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2) && currentMissileNumber != 2 && canFire == true)
+            {
+                StartCoroutine(Jammed());
+            }
+            //If the player presses the left mouse button
+            if (Input.GetKeyDown(KeyCode.Alpha3) && currentMissileNumber == 3 && canFire == true)
+            {
+                //Starts the coroutine that shoots
+                StartCoroutine(ShootTurret());
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3) && currentMissileNumber != 3 && canFire == true)
+            {
+                StartCoroutine(Jammed());
+            }
+            //If the player presses the left mouse button
+            if (Input.GetKeyDown(KeyCode.Alpha4) && currentMissileNumber == 4 && canFire == true)
+            {
+                //Starts the coroutine that shoots
+                StartCoroutine(ShootTurret());
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4) && currentMissileNumber != 4 && canFire == true)
+            {
+                StartCoroutine(Jammed());
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha1) && currentMissileNumber != 1 && canFire == true)
+        if(isRocketGun == true)
         {
-            StartCoroutine(Jammed());
+
         }
-        //If the player presses the left mouse button
-        if (Input.GetKeyDown(KeyCode.Alpha2) && currentMissileNumber == 2 && canFire == true)
-        {
-            //Starts the coroutine that shoots
-            StartCoroutine(ShootTurret());
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) && currentMissileNumber != 2 && canFire == true)
-        {
-            StartCoroutine(Jammed());
-        }
-        //If the player presses the left mouse button
-        if (Input.GetKeyDown(KeyCode.Alpha3) && currentMissileNumber == 3 && canFire == true)
-        {
-            //Starts the coroutine that shoots
-            StartCoroutine(ShootTurret());
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3) && currentMissileNumber != 3 && canFire == true)
-        {
-            StartCoroutine(Jammed());
-        }
-        //If the player presses the left mouse button
-        if (Input.GetKeyDown(KeyCode.Alpha4) && currentMissileNumber == 4 && canFire == true)
-        {
-            //Starts the coroutine that shoots
-            StartCoroutine(ShootTurret());
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4) && currentMissileNumber != 4 && canFire == true)
-        {
-            StartCoroutine(Jammed());
-        }
+
+        
         //End of gun code
 
         // Fills the list with all gameobjects that have the tag "Missile"
@@ -345,6 +359,14 @@ public class carController : MonoBehaviour
 
         //Makes it so that the player can fire
         canFire = true;
+    }
+
+    IEnumerator ShootRocket()
+    {
+        //Makes it so that the player can't fire
+        canFire = false;
+
+        yield return new WaitForSeconds(turretCooldown);
     }
 
 }

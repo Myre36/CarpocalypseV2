@@ -6758,6 +6758,9 @@ MonoBehaviour:
   armor1: {fileID: 7909015154448035861}
   armor2: {fileID: 8056045808696032089}
   armor3: {fileID: 6875547040724175169}
+  isNormalGun: 0
+  isMiniGun: 0
+  isRocketGun: 1
 --- !u!54 &8660426066575743817
 Rigidbody:
   m_ObjectHideFlags: 0
