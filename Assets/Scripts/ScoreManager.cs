@@ -18,7 +18,7 @@ public class ScoreManager : MonoBehaviour
 {
             
 }
-        missilesDestroyedText.text = "Missiles destroyed: " + PlayerPrefs.GetInt("Score");
+        missilesDestroyedText.text = "Score: " + PlayerPrefs.GetInt("Score") + " missiles destroyed";
 
         missilesDestroyedHiScore = PlayerPrefs.GetInt("HighScore");
         missilesDestroyedHiScoreText.text = "High Score: " + missilesDestroyedHiScore + " missiles destroyed!";
