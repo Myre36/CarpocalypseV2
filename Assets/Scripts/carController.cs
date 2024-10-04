@@ -124,6 +124,7 @@ public class carController : MonoBehaviour
                 blackBox.GetComponent<Image>().enabled = false;
                 //Disables the text
                 pressText2.GetComponent<TMP_Text>().enabled = false;
+                CinemachineShake.Instance.ShakeCamera(10f, .4f);
             }
             else
             {
