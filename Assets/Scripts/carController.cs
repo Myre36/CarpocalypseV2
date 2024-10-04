@@ -376,8 +376,7 @@ public class carController : MonoBehaviour
         //Plays shoot sound
         gunSound.Play(0);
 
-        //Applies force to the bullet to make it shoot forward
-        ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, 0, launchVelocity));
+        ball.GetComponent<RocketScript>().objectToFollow = objectToShoot;
 
         //Waits for the cooldown
         yield return new WaitForSeconds(turretCooldown);
