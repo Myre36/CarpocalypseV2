@@ -20,6 +20,8 @@ public class carController : MonoBehaviour
     public int collectedScrap;
     //The number of scrap needed to fire a missile
     public int scrapsNeeded;
+    //The number of armor the car has
+    public int armorLevel;
 
     //Bools that check if the car has reached the right and left edges at the screen
     private bool atRightEdge;
@@ -63,6 +65,10 @@ public class carController : MonoBehaviour
     public GameObject blackBox;
     //Refrence to the text that displays when a missile is fired
     public GameObject pressText2;
+    //Refrences to the armor gameobjects
+    public GameObject armor1;
+    public GameObject armor2;
+    public GameObject armor3;
 
     //Plays at the start
     void Start()
@@ -72,7 +78,8 @@ public class carController : MonoBehaviour
         //Make it so that the gun is not jammed
         jammed = false;
         collectedScrap = 0;
-        hasArmor = false;
+        //armorLevel = 0;
+        //hasArmor = false;
     }
 
     //When an object enters the car's trigger
@@ -102,7 +109,7 @@ public class carController : MonoBehaviour
             if (hasArmor == true)
             {
                 Destroy(collision.gameObject);
-                hasArmor = false;
+                armorLevel--;
                 //Disables the black box
                 blackBox.GetComponent<Image>().enabled = false;
                 //Disables the text
@@ -119,13 +126,51 @@ public class carController : MonoBehaviour
         {
             //Destroy the scrap
             Destroy(collision.gameObject);
-            hasArmor = true;
+            if(armorLevel < 3)
+            {
+                armorLevel++;
+            }
+            
         }
     }
 
     //The update is triggered every frame
     void Update()
     {
+        if (armorLevel > 0)
+        {
+            hasArmor = true;
+        }
+        else
+        {
+            hasArmor = false;
+        }
+
+        if (armorLevel == 3)
+        {
+            armor1.SetActive(true);
+            armor2.SetActive(true);
+            armor3.SetActive(true);
+        }
+        else if (armorLevel == 2)
+        {
+            armor1.SetActive(true);
+            armor2.SetActive(true);
+            armor3.SetActive(false);
+        }
+        else if (armorLevel == 1)
+        {
+            armor1.SetActive(true);
+            armor2.SetActive(false);
+            armor3.SetActive(false);
+        }
+        else
+        {
+            armor1.SetActive(false);
+            armor2.SetActive(false);
+            armor3.SetActive(false);
+        }
+
         //Makes the wheels spin
         wheels[0].transform.Rotate(0, 0, -700 * Time.deltaTime);
         wheels[1].transform.Rotate(0, 0, 700 * Time.deltaTime);
