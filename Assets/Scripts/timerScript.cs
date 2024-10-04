@@ -56,6 +56,7 @@ public class timerScript : MonoBehaviour
         missilesDestroyedHiScore = 0;
         StartCoroutine(IncreaseSpeed());
 
+
         if (PlayerPrefs.HasKey("HighScore"))
         {
             missilesDestroyedHiScore = PlayerPrefs.GetInt("HighScore");
@@ -84,6 +85,7 @@ public class timerScript : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", missilesDestroyedHiScore);
         }
 
+
         if (counter > currentTimeHiScore)
         {
             currentTimeHiScore = counter;
@@ -94,6 +96,7 @@ public class timerScript : MonoBehaviour
         currentTimeText.text = "Survived: " + time.ToString(@"mm\:ss\.ff");
         currentTimeHiScoreText.text = "High Score: " + currentTimeHiScore;
         missilesDestroyedText.text = "Missiles destroyed: " + missilesDestroyed;
+        PlayerPrefs.SetInt("Score", missilesDestroyed);
         missilesDestroyedHiScoreText.text = "High Score: " + missilesDestroyedHiScore;
     }
 
