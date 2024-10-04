@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 1105465038591570095}
   - component: {fileID: 5571435563632169327}
   - component: {fileID: 8003423452995830332}
+  - component: {fileID: 2457259321678209034}
   m_Layer: 12
   m_Name: Shield
   m_TagString: Scrap
@@ -207,3 +208,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2.0489082, z: 1.4455264}
   m_Center: {x: 9.5315876e-17, y: -0.4674228, z: 0.03795725}
+--- !u!95 &2457259321678209034
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9068969502970610407}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e31d28035caa16f45a682dc732e81407, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
