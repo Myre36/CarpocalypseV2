@@ -5633,13 +5633,14 @@ GameObject:
   - component: {fileID: 9153456127928366608}
   - component: {fileID: 8120050634723846510}
   - component: {fileID: 2628730402419091259}
+  - component: {fileID: 9153456127928366609}
   m_Layer: 0
   m_Name: MachineGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &3630602892552735227
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5997,7 +5998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5265847944320247261
 Transform:
   m_ObjectHideFlags: 0
@@ -7166,8 +7167,8 @@ MonoBehaviour:
   armor1: {fileID: 7909015154448035861}
   armor2: {fileID: 8056045808696032089}
   armor3: {fileID: 6875547040724175169}
-  isNormalGun: 1
-  isMiniGun: 0
+  isNormalGun: 0
+  isMiniGun: 1
   isRocketGun: 0
   animator: {fileID: 9005819988307989334}
 --- !u!54 &8660426066575743817
@@ -7357,6 +7358,27 @@ Transform:
   - {fileID: 29763104}
   m_Father: {fileID: 778591307}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &9153456127928366609
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3579838433303902202}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4a182f618cb74374ea267e87e4830ddd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
