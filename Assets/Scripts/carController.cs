@@ -78,8 +78,8 @@ public class carController : MonoBehaviour
         //Make it so that the gun is not jammed
         jammed = false;
         collectedScrap = 0;
-        //armorLevel = 0;
-        //hasArmor = false;
+        armorLevel = 0;
+        hasArmor = false;
     }
 
     //When an object enters the car's trigger

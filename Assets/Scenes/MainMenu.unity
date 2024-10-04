@@ -2574,10 +2574,10 @@ Transform:
   - {fileID: 1318781751}
   - {fileID: 78258603}
   - {fileID: 772285896}
+  - {fileID: 1042042251}
   - {fileID: 1914983957}
   - {fileID: 1689635265}
   - {fileID: 587280694}
-  - {fileID: 1042042251}
   - {fileID: 522265815}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
