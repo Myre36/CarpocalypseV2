@@ -63,7 +63,7 @@ public class timerScript : MonoBehaviour
 
         if (PlayerPrefs.HasKey("TimeHighScore"))
         {
-            currentTimeHiScoreText.text = PlayerPrefs.GetInt("TimeHighScore").ToString();
+            currentTimeHiScoreText.text = PlayerPrefs.GetInt("TimeHighScore").ToString(@"mm\:ss\.ff");
         }
 
     }
@@ -82,7 +82,7 @@ public class timerScript : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", missilesDestroyedHiScore);
         }
 
-        if (currentTime > currentTimeHiScore)
+        if (counter > currentTimeHiScore)
         {
             currentTimeHiScore = counter;
             PlayerPrefs.SetInt("TimeHighScore", currentTimeHiScore);
@@ -92,7 +92,7 @@ public class timerScript : MonoBehaviour
         currentTimeText.text = "Survived: " + time.ToString(@"mm\:ss\.ff");
         currentTimeHiScoreText.text = "High Score: " + currentTimeHiScore;
         missilesDestroyedText.text = "Missiles destroyed: " + missilesDestroyed;
-        // missilesDestroyedHiScoreText.text = "High Score: " + missilesDestroyedHiScore(@"mm\:ss\.ff");
+        missilesDestroyedHiScoreText.text = "High Score: " + missilesDestroyedHiScore;
     }
 
     public void StartStopWatch()
